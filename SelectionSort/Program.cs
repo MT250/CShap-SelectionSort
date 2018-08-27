@@ -1,30 +1,25 @@
 ﻿using System;
-
 namespace SelectionSort
 {
     class Program
     {
         static void Main(string[] args)
         {
-            try
-            {
+            try{
                 //Define array and fill it with random numbers
                 Random number = new Random();
-
                 int[] inputArray1 = new int[10];
-
-                for (int i = 0; i < 10; i++)
-                {
+                
+                for (int i = 0; i < 10; i++){
                     inputArray1[i] = number.Next(-100, 100);
                 }
-
+                
                 Console.WriteLine("Array: " + string.Join(" ", inputArray1) + "\n");
                 selectionSort(inputArray1);
                 Lines("-", 100);
             }
 
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 Console.WriteLine(ex);
             }
             //Hold console
@@ -44,15 +39,13 @@ namespace SelectionSort
             int minValue = int.Parse(array[startIndex].ToString());
             int minIndex = int.Parse(startIndex.ToString());
 
-            for (int i = minIndex; i < array.Length; i++)
-            {
-                if (int.Parse(array[i].ToString()) < minValue)
-                {
+            for (int i = minIndex; i < array.Length; i++){
+                if (int.Parse(array[i].ToString()) < minValue){
                     minIndex = i;
                     minValue = int.Parse(array[i].ToString());
                 }
             }
-
+            
             return minIndex;
         }
         
@@ -65,19 +58,18 @@ namespace SelectionSort
             Lines("/", 100);
             Console.Write("\n");
 
-            for (int i = 0; i < inputArray.Length; i++)
-                {
+            for (int i = 0; i < inputArray.Length; i++){
                       x = indexOfMinimum(inputArray, i);
                       swap(inputArray, i, x);
-                }
+            }
         }
 
         public static void Lines(string sym, int amount)
         {
-            for (int i = 0; i < amount; i++)
-            {
+            for (int i = 0; i < amount; i++){
                 Console.Write(sym);
             }
         }
+        
     }
 }
